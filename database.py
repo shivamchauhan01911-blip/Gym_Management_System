@@ -1,10 +1,12 @@
+import os
 import mysql.connector
 
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="mysql@1911",
-    database="gymdb"
+    host=os.getenv("MYSQLHOST"),
+    user=os.getenv("MYSQLUSER"),
+    password=os.getenv("MYSQLPASSWORD"),
+    database=os.getenv("MYSQLDATABASE"),
+    port=os.getenv("MYSQLPORT")
 )
 
 print("MySQL Connected Successfully")
